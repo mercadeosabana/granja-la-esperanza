@@ -1,0 +1,14 @@
+VIDEOS INCLUIDOS (H.264 mp4 + VP9 webm, sin audio, faststart, con poster):
+- hero.*            -> fondo del hero y paso 03 "Cría por bandas" (recorrido por galpón)
+- genetica.*        -> paso 01 "Genética" (maternidad)
+- alimento-planta.* -> paso 02 "Alimento propio" (Ken Burns: planta de alimento + enfriador de pellets)
+- planta-camara.*   -> paso 04 "Planta de proceso" (video real del cuarto frío)
+- planta.*          -> banda de video en la galería "La granja por dentro" (Ken Burns: cuarto frío, equipo, línea, sala de cortes)
+
+PENDIENTE: distribucion.mp4 -> paso 05 "Distribución propia" (camiones)
+
+FOTOS (jpg + webp, máx 1600px): granja-1..14
+- 1..6 maternidad; 7..11 planta de proceso; 12..13 planta de alimento; 14 montacargas en bodega
+- Logos de terceros difuminados (AGROBOX, logos de uniformes, sellos de canales, CLARK, coéxito).
+  Originales difuminados en alta en fotos-difuminadas/.
+Fotos pendientes: gente-2..4.jpg (Nuestra gente), foto de los 4 socios (opcional).
