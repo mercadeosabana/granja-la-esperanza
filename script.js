@@ -1,6 +1,7 @@
 // ===== EDITABLE =====
 const WHATSAPP='57XXXXXXXXXX'; // 57 + celular, sin + ni espacios
 const EMAIL='ventas@EJEMPLO.com';
+const CRM_URL='PEGAR_AQUI_URL_APPS_SCRIPT'; // URL /exec de Google Apps Script (ver crm/apps-script.gs)
 // ====================
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -49,3 +50,5 @@ lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
 lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
 // lazy band video
 const band=$('video[data-lazy]');if(band){const bo=new IntersectionObserver(es=>{if(es[0].isIntersecting){$$('source',band).forEach(s=>s.src=s.dataset.src);band.load();band.play().catch(()=>{});bo.disconnect()}},{rootMargin:'200px'});bo.observe(band)}
+// FAQ: one open at a time
+$$('.faq-i').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)$$('.faq-i').forEach(o=>o!==d&&(o.open=false))}));
