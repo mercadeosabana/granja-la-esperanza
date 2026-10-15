@@ -229,3 +229,7 @@ dialog#lb::backdrop{background:#0b1a10ee;backdrop-filter:blur(4px)}
 .va-send{background:var(--m);color:#1d1606;font-weight:700}
 .va-note{margin:0;padding:.4rem 1rem .7rem;font-size:.68rem;opacity:.6;background:#fff}
 @media(max-width:600px){.va-fab{padding:.8rem 1rem;font-size:.8rem}}
+/* product photos (16:9 originals, package centered) */
+.item .pic{aspect-ratio:16/10;background:#c9a77c}.item .pic picture{display:block;height:100%}
+.item .pic img{object-fit:cover;object-position:50% 50%}
+.item{flex-basis:min(82vw,440px)}
