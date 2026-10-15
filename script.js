@@ -37,6 +37,12 @@ $$('.step').forEach(s=>sio.observe(s));setStep(0);
 const rail=$('#rail');$$('.arrows button').forEach(b=>b.onclick=()=>rail.scrollBy({left:b.dataset.dir*rail.clientWidth*.8,behavior:'smooth'}));
 let dn=false,sx,sl;rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=rail.scrollLeft;rail.style.scrollSnapType='none'});
 addEventListener('pointerup',()=>{if(dn){dn=false;rail.style.scrollSnapType=''}});rail.addEventListener('pointermove',e=>{if(dn)rail.scrollLeft=sl-(e.clientX-sx)});
+// product category filter
+(()=>{const chips=$$('.chip[data-cat]'),items=$$('#rail .item'),st=$('#prod-status');if(!chips.length)return;
+const apply=c=>{let n=0;items.forEach(it=>{const on=c==='all'||it.dataset.cat===c;it.hidden=!on;if(on){n++;it.classList.add('in');const no=$('.no',it);if(no)no.textContent=String(n).padStart(2,'0')}});
+chips.forEach(b=>b.setAttribute('aria-pressed',b.dataset.cat===c));rail.scrollTo({left:0});const lbl=chips.find(b=>b.dataset.cat===c);
+if(st)st.textContent=`${n} productos: ${lbl.childNodes[0].textContent.trim()}`};
+chips.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.cat)));})();
 // form -> mailto
 $('#cotiza').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);
 location.href=`mailto:${EMAIL}?subject=${encodeURIComponent('Cotización cerdo en canal - '+f.get('Negocio'))}&body=${encodeURIComponent([...f].map(([k,v])=>k+': '+v).join('\n'))}`});
